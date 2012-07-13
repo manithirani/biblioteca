@@ -11,6 +11,7 @@ import java.io.IOException;
  */
 public class Biblioteca {
 
+        int status[]={1,1,1,1,1};
         public int optionChoice(int ch) throws IOException {
 
             if(ch==1||ch==2||ch==3)
@@ -23,4 +24,22 @@ public class Biblioteca {
 
 
         }
+        public int displayBooks()
+        {
+            System.out.println("1. Book1");
+            System.out.println("2. Book2");
+            System.out.println("3. Book3");
+            System.out.println("4. Book4");
+            System.out.println("5. Book5");
+
+            return 1;
+        }
+        public int checkAvailability(int opt)
+        {
+              if(status[opt-1]==1)
+                  return 1;
+              else
+                  return 0;
+        }
+
 }

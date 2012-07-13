@@ -44,4 +44,10 @@ public class BibliotecaTest extends TestCase {
         assertEquals(0, new Biblioteca().reserveBooks(3));
     }
 
+    public void testvalidLibraryNumber() throws Exception {
+         assertEquals(1, new Biblioteca().libraryNumber("Bruce"));
+    }
+    public void testinvalidLibraryNumber() throws Exception {
+        assertEquals(0, new Biblioteca().libraryNumber("Rachel"));
+    }
 }

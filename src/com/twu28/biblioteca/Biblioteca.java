@@ -14,6 +14,8 @@ import java.io.InputStreamReader;
 public class Biblioteca {
 
         int status[]={1,1,0,1,0};
+        String names[]={"Bruce","Alfred","Gordon","Dent","Fox"};
+        int libnum[]={127,528,491,500,123};
         public int optionChoice(int ch) throws IOException {
 
             if(ch==1||ch==2||ch==3)
@@ -28,11 +30,11 @@ public class Biblioteca {
         }
         public int displayBooks()
         {
-            System.out.println("1. Book1");
-            System.out.println("2. Book2");
-            System.out.println("3. Book3");
-            System.out.println("4. Book4");
-            System.out.println("5. Book5");
+            System.out.println("1. Kane and Abel");
+            System.out.println("2. The Best Laid Plans");
+            System.out.println("3. Paths of Glory");
+            System.out.println("4. The Doomsday Conspiracy");
+            System.out.println("5. The Prodigal Daughter");
 
             return 1;
         }
@@ -44,11 +46,11 @@ public class Biblioteca {
                   return 0;
         }
     public int reserveBooks(int bookChoice) throws IOException {
-        System.out.println("1. Book1");
-        System.out.println("2. Book2");
-        System.out.println("3. Book3");
-        System.out.println("4. Book4");
-        System.out.println("5. Book5");
+        System.out.println("1. Kane and Abel");
+        System.out.println("2. The Best Laid Plans");
+        System.out.println("3. Paths of Glory");
+        System.out.println("4. The Doomsday Conspiracy");
+        System.out.println("5. The Prodigal Daughter");
         System.out.println("Enter the number for reserving the book:");
         /*InputStreamReader r=new InputStreamReader(System.in);
         BufferedReader b=new BufferedReader(r);
@@ -66,5 +68,22 @@ public class Biblioteca {
             return 0;
         }
 
+    }
+    public int libraryNumber(String name)
+    {
+        int index=-1;
+        for(int i=0;i<5;i++)
+        {
+            if(name.equals(names[i]))
+                index=i;
+        }
+        if(index==-1)
+        {
+            System.out.println("Name not found");
+            return 0;
+        }
+        System.out.println("Library Number is "+libnum[index]);
+        System.out.println("Please talk to the librarian. Thank you");
+        return 1;
     }
 }

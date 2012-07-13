@@ -43,7 +43,7 @@ public class Biblioteca {
               else
                   return 0;
         }
-    public int reserveBooks(int choice) throws IOException {
+    public int reserveBooks(int bookChoice) throws IOException {
         System.out.println("1. Book1");
         System.out.println("2. Book2");
         System.out.println("3. Book3");
@@ -54,9 +54,9 @@ public class Biblioteca {
         BufferedReader b=new BufferedReader(r);
         String x= b.readLine();
         int choice=Integer.parseInt(x);    */
-        if(checkAvailability(choice)==1)
+        if(checkAvailability(bookChoice)==1)
         {
-            status[choice-1]=0;
+            status[bookChoice-1]=0;
             System.out.println("Thank you. Enjoy the book!");
             return 1;
         }

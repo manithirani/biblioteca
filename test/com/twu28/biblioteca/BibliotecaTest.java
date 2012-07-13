@@ -28,15 +28,20 @@ public class BibliotecaTest extends TestCase {
     public void testsecondBookIsAvailable() throws Exception {
         assertEquals(1, new Biblioteca().checkAvailability(2));
     }
-    public void testthirdBookIsAvailable() throws Exception {
-        assertEquals(1, new Biblioteca().checkAvailability(3));
+    public void testthirdBookIsNotAvailable() throws Exception {
+        assertEquals(0, new Biblioteca().checkAvailability(3));
     }
     public void testfourthBookIsAvailable() throws Exception {
         assertEquals(1, new Biblioteca().checkAvailability(4));
     }
-    public void testfifthBookIsAvailable() throws Exception {
-        assertEquals(1, new Biblioteca().checkAvailability(5));
+    public void testfifthBookIsNotAvailable() throws Exception {
+        assertEquals(0, new Biblioteca().checkAvailability(5));
     }
-
+    public void testreserveBooks() throws Exception {
+        assertEquals(1, new Biblioteca().reserveBooks(2));
+    }
+    public void testcannotReserveBooks() throws Exception {
+        assertEquals(0, new Biblioteca().reserveBooks(3));
+    }
 
 }

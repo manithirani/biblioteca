@@ -38,10 +38,7 @@ public class BibliotecaTest extends TestCase {
         assertEquals(0, new Biblioteca().checkAvailability(5));
     }
     public void testreserveBooks() throws Exception {
-        assertEquals(1, new Biblioteca().reserveBooks(2));
-    }
-    public void testcannotReserveBooks() throws Exception {
-        assertEquals(0, new Biblioteca().reserveBooks(3));
+        assertEquals(1, new Biblioteca().reserveBooks());
     }
 
     public void testvalidLibraryNumber() throws Exception {

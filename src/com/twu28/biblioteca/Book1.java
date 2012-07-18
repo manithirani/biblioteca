@@ -40,7 +40,7 @@ public class Book1 {
 
     }
 
-    private void setAvail(boolean b) {
+    public void setAvail(boolean b) {
         this.availability=b;
     }
 }

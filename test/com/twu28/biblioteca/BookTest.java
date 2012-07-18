@@ -32,4 +32,6 @@ public class BookTest extends TestCase {
         assertFalse(book.getAvail());
 
     }
+
+
 }

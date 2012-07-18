@@ -25,22 +25,27 @@ public class Book1 {
         return this.num;
     }
 
-    public boolean getAvail() {
+    public boolean isAvailable()
+    {
         return this.availability;
     }
-
-    public void reserve() {
-        if(this.getAvail())
-        {
-            this.setAvail(false);
-            System.out.println("Enjoy the book. Thank You");
-        }
-        else
-            System.out.println("Book is not available");
-
-    }
-
-    public void setAvail(boolean b) {
+    private void setAvailability(boolean b){
         this.availability=b;
     }
+
+    public boolean reserve() {
+        if(this.isAvailable())
+        {
+            this.setAvailability(false);
+            System.out.println("Enjoy the book. Thank You");
+            return true;
+        }
+        else
+        {
+            System.out.println("Sorry, we don't have that book yet.");
+            return false;
+        }
+
+    }
+
 }

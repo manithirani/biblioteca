@@ -42,6 +42,7 @@ public class Biblioteca {
                         break;
                 case 4: System.out.println("Thank you for using the application.");
                         break;
+                default:System.out.println("Select a valid option!");
 
             }
            }while(choice!=4);

@@ -31,20 +31,9 @@ public class Library {
 
     public boolean reserveBook(int bookNum) {
         Book1 bookChoice=this.getBook(bookNum);
-        if(bookChoice==null)
-        {
-            System.out.println("Invalid book number");
-            return false;
-        }
-        if(bookChoice.getAvail())
-        {
-            bookChoice.setAvail(false);
-            System.out.println("Thank You! Enjoy the book.");
-            return true;
-        }
-        System.out.println("Sorry we don't have that book yet.");
-        return true;
+        return bookChoice.reserve();
     }
+
     public Book1 getBook(int ref){
         for(int i=0;i<this.len;i++)
         {

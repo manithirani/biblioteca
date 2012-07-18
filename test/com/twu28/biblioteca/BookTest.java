@@ -11,25 +11,31 @@ import junit.framework.TestCase;
  */
 public class BookTest extends TestCase {
 
-    public void testbookShouldHaveAName() throws Exception {
+    public void testBookShouldHaveAName() throws Exception {
         Book1 book=new Book1("XYZ",1);
         assertEquals("XYZ",book.getName());
 
     }
-    public void testbookShouldHaveANumber() throws Exception {
+    public void testBookShouldHaveANumber() throws Exception {
         Book1 book=new Book1("XYZ", 1);
         assertEquals(1 ,book.getNum());
 
     }
-    public void testbookShouldBeAvailableWhenCreated() throws Exception {
+    public void testBookShouldBeAvailableWhenCreated() throws Exception {
         Book1 book=new Book1("XYZ", 1);
-        assertTrue(book.getAvail());
+        assertTrue(book.isAvailable());
 
     }
-    public void testbookShouldNotBeAvailableWhenReserved() throws Exception {
+
+    public void testShouldBeReservedWhenAvailable() throws Exception {
+        Book1 book=new Book1("XYZ", 1);
+        assertTrue(book.reserve());
+    }
+
+    public void testBookShouldNotBeAvailableWhenReserved() throws Exception {
         Book1 book=new Book1("XYZ", 1);
         book.reserve();
-        assertFalse(book.getAvail());
+        assertFalse(book.isAvailable());
 
     }
 

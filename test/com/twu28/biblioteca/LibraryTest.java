@@ -40,6 +40,11 @@ public class LibraryTest extends TestCase {
         assertNull(lib.getBook(16));
     }
 
+    public void testShouldReturnCorrectBook() throws Exception {
+         Library lib=new Library();
+         assertEquals(lib.bookList[2],lib.getBook(3));
+    }
+
     public void testDisplayMessageLibraryNumber() throws Exception {
         Library lib=new Library();
         assertTrue(lib.checkLibraryNumber());

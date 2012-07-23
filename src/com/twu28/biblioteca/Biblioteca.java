@@ -16,6 +16,6 @@ public class Biblioteca {
 
     public static void main(String args[]) throws IOException {
         AppClass app=new AppClass();
-        app.RunApp();
+        app.RunApp(System.in);
     }
 }

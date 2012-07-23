@@ -2,6 +2,7 @@ package com.twu28.biblioteca;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
@@ -22,14 +23,14 @@ public class AppClass {
         return true;
     }
 
-    public int getChoice() throws IOException {
-        InputStreamReader isr=new InputStreamReader(System.in);
+    public int getChoice(InputStream i) throws IOException {
+        InputStreamReader isr=new InputStreamReader(i);
         BufferedReader br=new BufferedReader(isr);
         String x=br.readLine();
         return Integer.parseInt(x);
     }
 
-    public int resolveChoice(Library l,int choice) throws IOException {
+    public int resolveChoice(Library l,int choice, InputStream i) throws IOException {
        if(choice==1)
        {
            l.displayBooks();
@@ -39,7 +40,7 @@ public class AppClass {
         {
             l.displayBooks();
             System.out.println("Enter book number to reserve");
-            int bnum=getChoice();
+            int bnum=getChoice(i);
             l.reserveBook(bnum);
             return 2;
         }
@@ -58,13 +59,13 @@ public class AppClass {
 
     }
 
-    public boolean RunApp() throws IOException {
-        int choice=0;
+    public boolean RunApp(InputStream i) throws IOException {
+        int choice;
         Library lib=new Library();
         do{
             displayMenu();
-            choice=getChoice();
-            resolveChoice(lib,choice);
+            choice=getChoice(i);
+            resolveChoice(lib,choice,i);
 
         }while(choice!=4);
         System.out.println("Application exited.");

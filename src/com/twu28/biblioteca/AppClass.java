@@ -27,10 +27,13 @@ public class AppClass {
         InputStreamReader isr=new InputStreamReader(i);
         BufferedReader br=new BufferedReader(isr);
         String x=br.readLine();
-        return Integer.parseInt(x);
+        System.out.println(x);
+        int y= Integer.parseInt(x);
+        return y;
     }
 
     public int resolveChoice(Library l,int choice, InputStream i) throws IOException {
+        System.out.println("Choice is "+choice);
        if(choice==1)
        {
            l.displayBooks();
@@ -62,6 +65,7 @@ public class AppClass {
     public boolean RunApp(InputStream i) throws IOException {
         int choice;
         Library lib=new Library();
+
         do{
             displayMenu();
             choice=getChoice(i);

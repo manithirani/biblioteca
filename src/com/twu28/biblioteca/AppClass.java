@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,18 +19,18 @@ public class AppClass {
         System.out.println("1. View books");
         System.out.println("2. Reserve book");
         System.out.println("3. Check Library Number");
-        System.out.println("4. Exit");
+        System.out.println("4. Display Movies");
+        System.out.println("5. Exit");
         System.out.println("Enter your choice...");
         return true;
     }
 
     public int getChoice(InputStream i) throws IOException {
-        InputStreamReader isr=new InputStreamReader(i);
-        BufferedReader br=new BufferedReader(isr);
-        String x=br.readLine();
-        System.out.println(x);
-        int y= Integer.parseInt(x);
-        return y;
+        Scanner s=new Scanner(i);
+        s.useDelimiter("\n");
+        String y= s.next();
+        int x=Integer.parseInt(y);
+        return x;
     }
 
     public int resolveChoice(Library l,int choice, InputStream i) throws IOException {
@@ -54,8 +55,13 @@ public class AppClass {
         }
         if(choice==4)
         {
-            System.out.println("Thank you for using this application");
+            l.displayMovies();
             return 4;
+        }
+        if(choice==5)
+        {
+            System.out.println("Thank you for using this application");
+            return 5;
         }
             System.out.println("Select a valid option!");
             return 0;
@@ -71,7 +77,7 @@ public class AppClass {
             choice=getChoice(i);
             resolveChoice(lib,choice,i);
 
-        }while(choice!=4);
+        }while(choice!=5);
         System.out.println("Application exited.");
         return true;
     }

@@ -48,7 +48,7 @@ public class Library {
         System.out.println("List of Movies:");
         for(int i=0;i<this.movieLen;i++)
         {
-            System.out.print(i+"--"+this.movies[i].getName()+"--"+this.movies[i].getDirector()+"--");
+            System.out.print((i+1)+"--"+this.movies[i].getName()+"--"+this.movies[i].getDirector()+"--");
             double r=this.movies[i].getRating();
             if(r==-1)
                 System.out.print("N/A");

@@ -47,7 +47,8 @@ public class LibraryTest extends TestCase {
 
     public void testDisplayMessageLibraryNumber() throws Exception {
         Library lib=new Library();
-        assertTrue(lib.checkLibraryNumber());
+        LogIn log=new LogIn();
+        assertTrue(lib.checkLibraryNumber(log));
     }
 
     public void testShouldDisplayMovies() throws Exception {

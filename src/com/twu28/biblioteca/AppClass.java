@@ -33,7 +33,7 @@ public class AppClass {
         return x;
     }
 
-    public int resolveChoice(Library l,int choice, InputStream i) throws IOException {
+    public int resolveChoice(Library l,int choice, InputStream i, LogIn log) throws IOException {
         System.out.println("Choice is "+choice);
        if(choice==1)
        {
@@ -50,7 +50,7 @@ public class AppClass {
         }
         if(choice==3)
         {
-            l.checkLibraryNumber();
+            l.checkLibraryNumber(log);
             return 3;
         }
         if(choice==4)
@@ -71,11 +71,16 @@ public class AppClass {
     public boolean RunApp(InputStream i) throws IOException {
         int choice;
         Library lib=new Library();
+        LogIn log=new LogIn();
+        if(log.getLogInDetails())
+            System.out.println("Login Successful");
+        else
+            System.out.println("Login not Successful. Continue as guest.");
 
         do{
             displayMenu();
             choice=getChoice(i);
-            resolveChoice(lib,choice,i);
+            resolveChoice(lib,choice,i,log);
 
         }while(choice!=5);
         System.out.println("Application exited.");

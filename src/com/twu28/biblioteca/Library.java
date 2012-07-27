@@ -73,8 +73,15 @@ public class Library {
         return null;
     }
 
-    public boolean checkLibraryNumber() {
-        System.out.println("Please talk to the librarian. Thank you.");
+    public boolean checkLibraryNumber(LogIn l) {
+        if(l.getLogInStatus())
+        {
+            int pos=l.getUserNum();
+            System.out.println("Your library number is "+l.getUname());
+        }
+        else
+            System.out.println("Please talk to the librarian. Thank you.");
+
         return true;
     }
 }

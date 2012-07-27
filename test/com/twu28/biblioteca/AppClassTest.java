@@ -24,7 +24,8 @@ public class AppClassTest extends TestCase {
     public void testShouldReturnOneForChoiceOne() throws Exception {
            AppClass app=new AppClass();
            Library l=new Library();
-           assertEquals(1,app.resolveChoice(l,1,System.in));
+        LogIn log=new LogIn();
+           assertEquals(1,app.resolveChoice(l,1,System.in,log));
     }
 
     public void testShouldReturnTwoForChoiceTwo() throws Exception {
@@ -32,32 +33,36 @@ public class AppClassTest extends TestCase {
         Library l=new Library();
         String str="2";
         InputStream is = new ByteArrayInputStream(str.getBytes());
-        assertEquals(2,app.resolveChoice(l,2,is));
+        LogIn log=new LogIn();
+        assertEquals(2,app.resolveChoice(l,2,is,log));
     }
 
     public void testShouldReturnThreeForChoiceThree() throws Exception {
         AppClass app=new AppClass();
         Library l=new Library();
-
-        assertEquals(3,app.resolveChoice(l,3,System.in));
+        LogIn log=new LogIn();
+        assertEquals(3,app.resolveChoice(l,3,System.in,log));
     }
 
     public void testShouldReturnFourForChoiceFour() throws Exception {
         AppClass app=new AppClass();
         Library l=new Library();
-        assertEquals(4,app.resolveChoice(l,4,System.in));
+        LogIn log=new LogIn();
+        assertEquals(4,app.resolveChoice(l,4,System.in,log));
     }
 
     public void testShouldReturnFiveForChoiceFive() throws Exception {
         AppClass app=new AppClass();
         Library l=new Library();
-        assertEquals(5,app.resolveChoice(l,5,System.in));
+        LogIn log=new LogIn();
+        assertEquals(5,app.resolveChoice(l,5,System.in,log));
     }
 
     public void testShouldReturnZeroForInvalidChoice() throws Exception {
         AppClass app=new AppClass();
         Library l=new Library();
-        assertEquals(0,app.resolveChoice(l,9,System.in));
+        LogIn log=new LogIn();
+        assertEquals(0,app.resolveChoice(l,9,System.in,log));
     }
 
     /*public void testShouldExitAppAfterRun() throws Exception {
